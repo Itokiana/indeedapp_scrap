@@ -15,11 +15,22 @@
 # gem 'pg'
 #
 default: &default
+
   adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+  pool: 5
+
+  timeout: 5000
+
+  host: localhost
+
+  username: postgres
+
+  password: postgres
+
+  database: indeedapp
+
+  port: 5432
 
 development:
   <<: *default

@@ -6,11 +6,14 @@ cities = []
   cities.push([c])
 end
 %>
-
+<div class = container>
 <%= form_tag("/get_data", method: "post") do %>
-  <%= label_tag(:keyword, "Résultats pour:") %>
-  <%= select_tag(:keyword, options_for_select([["commercial"],["rh"]])) %>
+  <%= label_tag(:keyword, "Résultats pour:")%>
+  <%= select_tag(:keyword, options_for_select([["commercial"],["rh"]]), {:class => 'form-control'}) %>
   <%= label_tag(:city, "Ville:") %>
-  <%= select_tag(:city, options_for_select(cities)) %>
-  <%= submit_tag("Télécharger version excel") %>
+  <%= select_tag(:city, options_for_select(cities), {:class => 'form-control'}) %>
+  <%= submit_tag "Télécharger version excel" , :class => 'btn btn-success' %>
 <% end %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-primary' %>
+
+  </div>
