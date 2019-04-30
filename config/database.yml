@@ -79,10 +79,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 # DATABASE_URL="postgres://ymtocfawxlbpww:1dc23e8bb4ab407462da8086911b0c12c9dfea044834c1531c8b583fed1f4584@ec2-54-221-243-211.compute-1.amazonaws.com:5432/den0n54n2ef55r"
-# production:
-#   <<: *default
-#   database: indeedapp_production
-#   username: indeedapp
-#   password: <%= ENV['DATABASE_URL'] %>
 production:
-  url: postgres://ymtocfawxlbpww:1dc23e8bb4ab407462da8086911b0c12c9dfea044834c1531c8b583fed1f4584@ec2-54-221-243-211.compute-1.amazonaws.com:5432/den0n54n2ef55r
+   <<: *default
+   database: indeedapp_production
+   username: indeedapp
+   password: <%= ENV['DATABASE_URL'] %>
+
