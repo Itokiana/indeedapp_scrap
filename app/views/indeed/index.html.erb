@@ -1,0 +1,16 @@
+<h1>I scrap indeed.fr</h1>
+
+<%
+cities = []
+@cities.each do |c|
+  cities.push([c])
+end
+%>
+
+<%= form_tag("/get_data", method: "post") do %>
+  <%= label_tag(:keyword, "Résultats pour:") %>
+  <%= select_tag(:keyword, options_for_select([["commercial"],["rh"]])) %>
+  <%= label_tag(:city, "Ville:") %>
+  <%= select_tag(:city, options_for_select(cities)) %>
+  <%= submit_tag("Télécharger version excel") %>
+<% end %>

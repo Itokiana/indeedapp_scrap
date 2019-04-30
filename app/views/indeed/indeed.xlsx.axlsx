@@ -1,0 +1,27 @@
+wb = xlsx_package.workbook
+
+
+wb.styles do |style|
+  project_heading = style.add_style(b: true, sz: 14)
+  heading = style.add_style(b: true)
+
+
+  wb.add_worksheet(name: "Indeed") do |sheet|
+    # Add a title row
+    # sheet.add_row ["Scraping Indeed.fr pour Strasbourg"], style: project_heading
+    # Add the date this was downloaded
+    # sheet.add_row ["Téléchargement le", Time.now.strftime("%b %-d, %Y")]
+    
+    # Add a blank row
+    # sheet.add_row []
+
+
+    # Create the header row
+    sheet.add_row ["Time", "Keyword", "URL", "Title", "Company", "Location", "Description", "Email", "Phone"], style: heading
+    # Create entries for each item
+    @results.each do |r|
+      sheet.add_row [r[:release], r[:keyword], r[:url], r[:title], r[:enterprise], r[:region], r[:description],"",""]
+    end
+  end
+
+end
