@@ -14,23 +14,30 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+# default: &default
+
+#   adapter: postgresql
+
+#   pool: 5
+
+#   timeout: 5000
+
+#   host: localhost
+
+#   username: postgres
+
+#   password: postgres
+
+#   database: indeedapp
+
+#   port: 5432
+
 default: &default
-
   adapter: postgresql
-
-  pool: 5
-
-  timeout: 5000
-
-  host: localhost
-
-  username: postgres
-
-  password: postgres
-
-  database: indeedapp
-
-  port: 5432
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
