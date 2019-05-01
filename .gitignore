@@ -19,8 +19,13 @@
 
 /node_modules
 /yarn-error.log
-
+Gemfile
+Gemfile.lock
+db/migrate/
+db/schema.rb
 /public/assets
+test/fixtures/users.yml
+test/models/user_test.rb
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.

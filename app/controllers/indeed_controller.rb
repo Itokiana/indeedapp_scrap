@@ -1,4 +1,5 @@
 class IndeedController < ApplicationController
+    before_action :authenticate_user!
   def index 
     @cities = ["Paris", "Lyon", "Nice", "Strasbourg", "Bordeaux", "Rennes", "Saint-Etienne", "Toulon", "Villeurbanne", "Angers", "Limoges", "Clermont-Ferrand", "Aix-en-Provence", "Amiens", "Metz", "Besancon", "Rouen", "Nancy", "Caen", "Argenteuil", "Tourcoing", "Dunkerque", "Avignon", "Poitiers", "Vitry-sur-Seine"]
   end
